@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ai-code-analyzer</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- HEADER -->
+
+        <header class="main-header">
+
+            <div class="logo">
+                <span class="logo-icon">&lt;/&gt;</span>
+
+                <div>
+                    <h1>ai-code-analyzer</h1>
+                    <p>Analyze • Understand • Document</p>
+                </div>
+            </div>
+
+        </header>
+
+
+        <!-- EDITOR -->
+
+        <section class="editor-section">
+
+            <div class="editor-topbar">
+
+                <div class="file-info">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+
+                    <span class="filename">code.py</span>
+                </div>
+
+                <span class="language-badge" id="languageBadge">
+                    Auto Detect
+                </span>
+
+            </div>
+
+
+            <div class="editor-wrapper">
+
+                <div class="line-numbers" id="lineNumbers">
+                    1
+                </div>
+
+                <textarea
+                    id="code"
+                    spellcheck="false"
+                    placeholder="Paste your code here..."
+                ></textarea>
+
+            </div>
+
+
+            <div class="editor-footer">
+
+    <div class="file-actions">
+
+        <input
+            type="file"
+            id="fileInput"
+            accept=".py,.java,.cpp,.cc,.js,.c"
+            hidden
+        >
+
+        <button id="fileBtn" class="secondary-btn">
+            📁 Choose File
+        </button>
+
+        <span id="fileName">
+            No file selected
+        </span>
+
+        <label class="language-picker">
+            Language
+            <select id="languageSelect">
+                <option value="">Auto Detect</option>
+                <option value="Python">Python</option>
+                <option value="Java">Java</option>
+                <option value="C++">C++</option>
+                <option value="C">C</option>
+                <option value="JavaScript">JavaScript</option>
+            </select>
+        </label>
+
+    </div>
+
+    <button id="analyzeBtn">
+        Analyze Code →
+    </button>
+
+</div>
+
+        </section>
+
+
+        <!-- RESULTS -->
+
+        <div id="result" class="result-section">
+
+            <div class="empty-result">
+
+                <div class="empty-icon">
+                    &lt;/&gt;
+                </div>
+
+                <h2>Ready to Analyze</h2>
+
+                <p>
+                    Paste your code above and click
+                    <strong>Analyze Code</strong> to get started.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
